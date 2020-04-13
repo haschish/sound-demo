@@ -2,6 +2,7 @@ package com.example.sounddemo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.media.AudioAttributes;
 import android.media.SoundPool;
 import android.os.Bundle;
 import android.view.View;
@@ -36,5 +37,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Button btnStop = (Button) findViewById(R.id.btnStop);
         btnStop.setOnClickListener(this);
+
+        AudioAttributes audioAttributes = new AudioAttributes.Builder()
+            .setUsage(AudioAttributes. USAGE_ASSISTANCE_SONIFICATION)
+            .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+            .build();
+
+        sp = new SoundPool.Builder()
+            .setMaxStreams(5)
+            .setAudioAttributes(audioAttributes)
+            .build();
     }
 }
