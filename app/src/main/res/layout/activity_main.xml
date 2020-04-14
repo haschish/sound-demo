@@ -6,78 +6,86 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="41dp"
-        android:layout_marginTop="43dp"
-        android:layout_marginEnd="41dp"
-        android:layout_marginBottom="119dp"
-        android:entries="@array/spinner_options"
-        app:layout_constraintBottom_toTopOf="@+id/btnSound3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
         android:id="@+id/btnSound1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginBottom="470dp"
+        android:layout_marginBottom="48dp"
         android:text="Sound1"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnPause"
         app:layout_constraintEnd_toStartOf="@+id/btnSound2"
         app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/seekBar" />
 
     <Button
-        android:id="@+id/btnSound2"
+        android:id="@+id/btnStop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="33dp"
         android:layout_marginEnd="1dp"
-        android:text="Sound2"
-        app:layout_constraintEnd_toStartOf="@+id/btnSound3"
-        app:layout_constraintStart_toEndOf="@+id/btnSound1"
-        app:layout_constraintTop_toBottomOf="@+id/seekBar" />
+        android:text="Stop"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnPause"
+        app:layout_constraintEnd_toStartOf="@+id/btnResume"
+        app:layout_constraintStart_toEndOf="@+id/btnPause" />
 
     <Button
         android:id="@+id/btnSound3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="47dp"
         android:text="Sound3"
-        app:layout_constraintBottom_toTopOf="@+id/btnStop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnSound2"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+        app:layout_constraintTop_toTopOf="@+id/btnSound2" />
 
     <Button
-        android:id="@+id/btnStop"
+        android:id="@+id/btnResume"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="374dp"
-        android:text="Stop"
+        android:layout_marginEnd="16dp"
+        android:text="Resume"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnStop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnStop" />
+
+    <Button
+        android:id="@+id/btnPause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="326dp"
+        android:text="Pause"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/btnSound2"
-        app:layout_constraintTop_toBottomOf="@+id/btnSound3" />
+        app:layout_constraintEnd_toStartOf="@+id/btnStop"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSound1" />
+
+    <Button
+        android:id="@+id/btnSound2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="1dp"
+        android:text="Sound2"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnSound1"
+        app:layout_constraintEnd_toStartOf="@+id/btnSound3"
+        app:layout_constraintStart_toEndOf="@+id/btnSound1" />
 
     <SeekBar
         android:id="@+id/seekBar"
         style="@style/Widget.AppCompat.SeekBar.Discrete"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="286dp"
+        android:layout_height="110dp"
         android:layout_marginStart="64dp"
+        android:layout_marginTop="147dp"
         android:layout_marginEnd="64dp"
-        android:layout_marginBottom="33dp"
+        android:layout_marginBottom="45dp"
         android:max="10"
-        android:progress="3"
+        android:progress="5"
         app:layout_constraintBottom_toTopOf="@+id/btnSound1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
