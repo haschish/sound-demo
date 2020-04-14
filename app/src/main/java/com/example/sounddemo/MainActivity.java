@@ -71,14 +71,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            AudioAttributes audioAttributes = new AudioAttributes.Builder()
-                .setUsage(AudioAttributes.USAGE_ASSISTANCE_SONIFICATION)
-                .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
-                .build();
+//            AudioAttributes audioAttributes = new AudioAttributes.Builder()
+//                .setUsage(AudioAttributes.USAGE_GAME)
+//                .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+//                .build();
 
             sp = new SoundPool.Builder()
                 .setMaxStreams(5)
-                .setAudioAttributes(audioAttributes)
+//                .setAudioAttributes(audioAttributes)
                 .build();
         } else {
             sp = new SoundPool(5, AudioManager.STREAM_MUSIC, 0);
